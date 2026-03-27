@@ -1,7 +1,7 @@
 class ClaudeSessionFinder < Formula
   desc "Interactive browser for Claude Code sessions"
-  homepage "https://github.com/kristopherbradley/claude-session-finder"
-  url "https://github.com/kristopherbradley/claude-session-finder/archive/refs/tags/v0.1.0.tar.gz"
+  homepage "https://github.com/krisbradley/claude-session-finder"
+  url "https://github.com/krisbradley/claude-session-finder/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "PLACEHOLDER" # Run: shasum -a 256 <downloaded-tarball> after creating the release
   license "MIT"
 
@@ -33,6 +33,14 @@ class ClaudeSessionFinder < Formula
       exec "#{venv_dir}/bin/python3" "#{libexec}/scripts/csf-summarize" "$@"
     SH
     (bin/"csf-summarize").chmod 0755
+
+    (bin/"csf-hook").write <<~SH
+      #!/bin/bash
+      cat > /dev/null
+      csf-summarize > /dev/null 2>&1 &
+      exit 0
+    SH
+    (bin/"csf-hook").chmod 0755
   end
 
   def post_install
@@ -40,12 +48,13 @@ class ClaudeSessionFinder < Formula
     settings = Pathname.new(ENV["HOME"]) / ".claude/settings.json"
     if settings.exist?
       ohai "To enable auto-summarize after each session, add this to #{settings}:"
-      ohai '  "Stop": [{"matcher":"","hooks":[{"type":"command","command":"csf-summarize"}]}]'
+      ohai '  "Stop": [{"matcher":"","hooks":[{"type":"command","command":"csf-hook"}]}]'
     end
   end
 
   test do
     assert_predicate bin/"csf", :exist?
     assert_predicate bin/"csf-summarize", :exist?
+    assert_predicate bin/"csf-hook", :exist?
   end
 end
