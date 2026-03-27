@@ -5,6 +5,8 @@ class ClaudeSessionFinder < Formula
   sha256 "PLACEHOLDER" # Run: shasum -a 256 <downloaded-tarball> after creating the release
   license "MIT"
 
+  depends_on "fzf"
+
   def install
     bin.install "csf"
   end
