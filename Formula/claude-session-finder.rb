@@ -1,7 +1,7 @@
-class ClaudeSessionsFinder < Formula
+class ClaudeSessionFinder < Formula
   desc "Interactive browser for Claude Code sessions"
-  homepage "https://github.com/kristopherbradley/claude-sessions-finder"
-  url "https://github.com/kristopherbradley/claude-sessions-finder/archive/refs/tags/v0.1.0.tar.gz"
+  homepage "https://github.com/kristopherbradley/claude-session-finder"
+  url "https://github.com/kristopherbradley/claude-session-finder/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "PLACEHOLDER" # Run: shasum -a 256 <downloaded-tarball> after creating the release
   license "MIT"
 
