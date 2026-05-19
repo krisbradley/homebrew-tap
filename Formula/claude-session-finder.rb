@@ -1,8 +1,8 @@
 class ClaudeSessionFinder < Formula
   desc "Interactive browser for Claude Code sessions"
   homepage "https://github.com/krisbradley/claude-session-finder"
-  url "https://github.com/krisbradley/claude-session-finder/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "94f325e46a7ce80f8a61833d960452824d5a51ee97573eda3dcd9f29f1add0da"
+  url "https://github.com/krisbradley/claude-session-finder/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "dea5b9c3bdd80529bcc0a643a1c7d6c58331dd4733be36d61c92046b54a49d85"
   license "MIT"
 
   depends_on "fzf"
