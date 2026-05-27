@@ -1,6 +1,6 @@
 cask "clawpypaste" do
-  version "0.1.2"
-  sha256 "53da0aa7b27186c134e0aa5c56bee83b1fb23e677993f58ae10b277799ea7111"
+  version "0.2.0"
+  sha256 "5b2548a6be8b4232c6eb37d6be6486f64278cfd30fd4e575ee5110e82b0fa019"
 
   url "https://github.com/krisbradley/clawpypaste/releases/download/v#{version}/clawpypaste.zip"
   name "clawpypaste"
@@ -10,6 +10,8 @@ cask "clawpypaste" do
   depends_on macos: ">= :ventura"
 
   app "clawpypaste.app"
+
+  binary "#{appdir}/clawpypaste.app/Contents/MacOS/clawpypaste"
 
   postflight do
     # Strip the quarantine flag so the app opens without a Gatekeeper prompt
