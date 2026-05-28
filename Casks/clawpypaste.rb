@@ -1,6 +1,6 @@
 cask "clawpypaste" do
-  version "0.2.4"
-  sha256 "04cff604e851b385d2d1ee8cdcc3d44b11c1d6647439d49936df8893bf891503"
+  version "0.2.5"
+  sha256 "d00304e90609444f449db541214765679897cb40bbea35ac570601c624af7103"
 
   url "https://github.com/krisbradley/clawpypaste/releases/download/v#{version}/clawpypaste.zip"
   name "clawpypaste"
